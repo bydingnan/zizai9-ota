@@ -3,17 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>字在9</title>
+  <title>字在9 · 内测安装</title>
   <style>
-    body { font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; padding:32px 18px; line-height:1.5; }
-    a.install { font-size:1.25rem; font-weight:700; }
-    .hint { color:#6c6c70; margin-top:16px; }
+    :root {
+      color-scheme: light dark;
+      --bg: #0f1115;
+      --card: #1b1f27;
+      --text: #f2f2f7;
+      --muted: #9aa0a6;
+      --accent: #0a84ff;
+      --line: rgba(255,255,255,.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #eef1f5;
+        --card: #ffffff;
+        --text: #1c1c1e;
+        --muted: #6c6c70;
+        --accent: #007aff;
+        --line: rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding: 24px 16px 48px;
+    }
+    main { max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin: 0 0 8px; }
+    .lead { color: var(--muted); margin: 0 0 24px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 16px 16px;
+      margin-bottom: 14px;
+    }
+    h2 { margin: 0 0 4px; font-size: 1.25rem; }
+    .sub, .id, .hint { color: var(--muted); margin: 0 0 10px; font-size: .92rem; }
+    .id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white !important;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin: 4px 0 12px;
+    }
+    .link {
+      display: block;
+      word-break: break-all;
+      white-space: pre-wrap;
+      background: rgba(127,127,127,.12);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: .72rem;
+    }
+    ol { padding-left: 1.2rem; color: var(--muted); }
+    li { margin: 6px 0; }
+    footer { margin-top: 28px; color: var(--muted); font-size: .85rem; }
   </style>
 </head>
 <body>
-  <h1>字在9</h1>
-  <p>build 125</p>
-  <p><a class="install" href="itms-services://?action=install-app&url=https%3A%2F%2Fbydingnan.github.io%2Fzizai9-ota%2Fmanifest.xml">安装</a></p>
-  <p class="hint">请用 Safari。若弹出「在 iTunes 打开此页？」先点打开；若之后没有「要安装字在9吗？」，说明此系统不支持网页 Ad Hoc，请改用电脑安装。</p>
+  <main>
+    <h1>字在9 · 内测安装</h1>
+    <p class="lead">请用 <strong>iPhone Safari</strong> 打开本页。微信/QQ 内置浏览器通常无法安装。</p>
+    
+      <section class="card">
+        <h2>字在9</h2>
+        <p class="sub">9 键 T9 全拼 · 0.1.0 (build 125)</p>
+        <p class="id">com.dingnan.zizai9</p>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https%3A%2F%2Fbydingnan.github.io%2Fzizai9-ota%2Fmanifest-zizai9.plist">用 Safari 安装</a>
+        <p class="hint">若无反应：复制下方链接，粘贴到 Safari 地址栏打开。</p>
+        <code class="link">itms-services://?action=download-manifest&url=https%3A%2F%2Fbydingnan.github.io%2Fzizai9-ota%2Fmanifest-zizai9.plist</code>
+      </section>
+
+    <section class="card">
+      <h2>装完后必做</h2>
+      <ol>
+        <li>设置 → 通用 → VPN与设备管理：如有未信任描述文件/开发者，先信任。</li>
+        <li>设置 → 通用 → 键盘 → 键盘 → 添加「字在9键盘」。</li>
+        <li>点进该键盘，打开「允许完全访问」。</li>
+        <li>任意输入框切换到对应键盘。</li>
+      </ol>
+    </section>
+    <footer>
+      本页只提供字在9；能否装上取决于 IPA 是否包含你的设备 UDID。
+    </footer>
+  </main>
 </body>
 </html>
