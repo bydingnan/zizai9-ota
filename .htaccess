@@ -1,0 +1,11 @@
+<IfModule mod_mime.c>
+  AddType application/xml .plist
+  AddType application/octet-stream .ipa
+  AddType image/png .png
+</IfModule>
+<FilesMatch "\.plist$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.ipa$">
+  ForceType application/octet-stream
+</FilesMatch>
